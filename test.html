@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = -1;
+        let arr = [];
+
+        while (a != 0) {
+            console.log('=================== Menu =================');
+            console.log('1. Nhập mảng');
+            console.log('2. Xuất mảng');
+            console.log('3. Tổng các phần tử trong mảng');
+            console.log('4. Tổng các số chẵn trong mảng');
+            console.log('5. Tổng các số lẻ trong mảng');
+            console.log('0. Thoát chương trình');
+
+            a = parseInt(prompt('Nhập chức năng:'));
+
+            switch (a) {
+                case 1:
+                    var max = parseInt(prompt('Nhập số lượng phần tử: n = '));
+                    arr = [];  // Khởi tạo lại mảng
+                    for (var i = 0; i < max; i++) {
+                        arr[i] = parseInt(prompt('Nhập phần tử thứ ' + (i + 1) + ':'));
+                    }
+                    break;
+                case 2:
+                    console.log('Mảng hiện tại: ' + arr.join(', '));
+                    break;
+                case 3:
+                    var sum = arr.reduce((acc, cur) => acc + cur, 0);
+                    console.log('Tổng các phần tử trong mảng: ' + sum);
+                    break;
+                case 4:
+                    var evenSum = arr.filter(num => num % 2 === 0).reduce((acc, cur) => acc + cur, 0);
+                    console.log('Tổng các số chẵn trong mảng: ' + evenSum);
+                    break;
+                case 5:
+                    var oddSum = arr.filter(num => num % 2 !== 0).reduce((acc, cur) => acc + cur, 0);
+                    console.log('Tổng các số lẻ trong mảng: ' + oddSum);
+                    break;
+                case 0:
+                    console.log('Thoát chương trình.');
+                    break;
+                default:
+                    console.log('Chức năng không hợp lệ, vui lòng thử lại.');
+            }
+        }
+
+    </script>
+</body>
+
+</html>
